@@ -1,15 +1,24 @@
+const mesaj = document.querySelector('#message');
+const faniler = document.querySelector('#fani');
+const arka = document.querySelector('body');
+const dugmeListesi = document.querySelector('#dugmeler');
+let kayipsayisi=0;
+let klik=0;
+const finalklik=3;
+
+
 function computerPlay(){
     let zar=Math.floor(Math.random()*3)+1;
     let sonuc="";
     switch (zar) {
         case 1:
-            sonuc="Rock";
+            sonuc="Taş";
             break;
         case 2:
-            sonuc="Paper";
+            sonuc="Kâğıt";
             break;
         case 3:
-            sonuc="Scıssors";
+            sonuc="Makas";
             break;            
     }
     // console.log(sonuc);
@@ -18,31 +27,78 @@ function computerPlay(){
 
 function singleRound(hamle1,hamle2)
 {
+    // mesaj.textContent='';
+    const mevcut = document.createElement('p');
     if (hamle1===hamle2){
-        console.log("Draw! You both picked "+hamle1);
+        mevcut.textContent="Berabere! İkiniz de "+ hamle1 + " seçtiniz.";
     }
-    else if ((hamle1==="Rock" && hamle2==="Scıssors")||(hamle1==="Scıssors" && hamle2==="Paper")||(hamle1==="Paper" && hamle2==="Rock")){
-        console.log("Victory! You win by choosing " + hamle1+ " over computer's " + hamle2 );
+    else if ((hamle1==="Taş" && hamle2==="Makas")||(hamle1==="Makas" && hamle2==="Kâğıt")||(hamle1==="Kâğıt" && hamle2==="Taş")){
+        mevcut.textContent="Zafer! Bilgisayarın "+ hamle2 +" seçimine karşılık " + hamle1+ " hamlesini seçtin!";
     }
     else{
-        console.log("Defeat! The computer wins by choosing " + hamle2+ " over your " + hamle1 );
+        mevcut.textContent="Yenilgi! Senin "+ hamle1 +" seçimine karşılık bilgisayar " + hamle2+ " oynadı!";
+        kayipsayisi++;
     }
-}
-
-function normalizeText(str)
-{
-    return str.charAt(0).toLocaleUpperCase()+oyuncu.slice(1).toLocaleLowerCase();
+    mesaj.insertBefore(mevcut, mesaj.firstChild);
+    if (kayipsayisi>2){
+        dugmeListesi.appendChild(tabancaDugme);
+        const btn4 = document.querySelector('#Tabanca');
+        btn4.addEventListener('click', Silah);
+    }
 }
 
 function game(num){
     for (let i = 0; i < num; i++) {
+        let i=0;
         console.log("Round : " + (i+1).toString());
-        let oyuncu = prompt("Write rock, papers or scissors","Rock");
-        oyuncu=normalizeText(oyuncu);
-        singleRound(oyuncu,computerPlay());
+    let oyuncu = prompt("Write rock, papers or scissors","Rock");
+    oyuncu=normalizeText(oyuncu);
+    singleRound(oyuncu,computerPlay());
       }
 }
 
-game(5);
+// game(5);
 
+const btn1 = document.querySelector('#Tas');
+btn1.addEventListener('click', function(){
+    singleRound("Taş",computerPlay());
+});
+
+const btn2 = document.querySelector('#Kagit');
+btn2.addEventListener('click', function(){
+    singleRound("Kâğıt",computerPlay());
+});
+
+const btn3 = document.querySelector('#Makas');
+btn3.addEventListener('click', function(){
+    singleRound("Makas",computerPlay());
+});
+
+
+
+
+const tabancaDugme = document.createElement('button');
+const tabancaResim = document.createElement('img');
+
+tabancaDugme.setAttribute('id', 'Tabanca');
+tabancaResim.setAttribute('src', 'images/gun-g3071f3cb7_640.png');
+tabancaDugme.appendChild(tabancaResim);
+tabancaResim.classList.add('resim'); 
+tabancaDugme.classList.add('dugme'); 
+
+const audiobam = document.querySelector("#bam");
+const audioklik = document.querySelector("#klik");
+
+
+function Silah() {
+   klik++;
+   audioklik.currentTime = 0;
+   audioklik.play();
+   if (klik>finalklik){
+        audioklik.pause();
+        audiobam.play();
+        faniler.style.cssText = "display:none";
+        arka.style.cssText="background-color: #8b0000";
+   }
+}
 

@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+}
+
+#dugmeler{
+    display: flex;
+    justify-content: center;
+    margin: 0 10vw;
+}
+
+.dugme{
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    background-color: inherit;
+}
+
+.resim{
+    /* max-width: 30vw;
+    flex: 1; */
+    max-width:100%;
+}
+
+#message{
+    text-align: center;
+    /* white-space: pre-line; */
+}
+
+body{
+    transition: background-color 2s;
+}
