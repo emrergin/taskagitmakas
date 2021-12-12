@@ -21,7 +21,6 @@ function computerPlay(){
             sonuc="Makas";
             break;            
     }
-    // console.log(sonuc);
     return sonuc;
 }
 
@@ -91,10 +90,15 @@ const audioklik = document.querySelector("#klik");
 
 
 function Silah() {
-   klik++;
-   audioklik.currentTime = 0;
-   audioklik.play();
-   if (klik>finalklik){
+    klik++;
+    audioklik.currentTime = 0;
+    tabancaResim.classList.add('titre');
+    tabancaResim.addEventListener( "animationend",  function() {
+        tabancaResim.classList.remove("titre");
+    });
+    
+    audioklik.play();
+    if (klik>finalklik){
         audioklik.pause();
         audiobam.play();
         faniler.style.cssText = "display:none";
