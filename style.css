@@ -5,7 +5,7 @@
 .ustveorta{
     display:flex;
     flex-direction: column;
-    height: 70vh;
+    /* height: 70vh; */
     align-items: center;
 }
 
@@ -19,6 +19,9 @@ h1{
     gap: 10vw;
     margin-bottom: 20px;
     font-size: 36px;
+    flex-wrap:wrap;
+    justify-content: center;
+    /* text-align: center; */
 }
 
 #dugmeler{
@@ -44,7 +47,6 @@ h1{
 .resim{
     max-width:100%;
     max-height: 50vh;;
-    /* flex: 1 1 auto; */
 }
 
 #message{
