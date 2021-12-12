@@ -46,16 +46,22 @@ h1{
 
 body{
     transition: background-color 2s;
+    /* display:flex; */
 
 }
 
 .win{
     color: white; 
-    font-size: 200px; 
-    font-weight: 900;
+    /* font-size: 200px;  */
+    /* align-items:stretch; */
     display: flexbox;
     justify-content: center;
     text-align: center;
+}
+
+.win span{
+    font-size: 200px;
+    font-weight: 900;    
 }
 
 @keyframes shake {

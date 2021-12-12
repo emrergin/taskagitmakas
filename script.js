@@ -90,8 +90,10 @@ const audiobam = document.querySelector("#bam");
 const audioklik = document.querySelector("#klik");
 
 const sonEkran = document.createElement('p');
+const sonEkranYazi = document.createElement('span');
 sonEkran.classList.add('win'); 
-sonEkran.textContent="KAZANDIN!";
+sonEkranYazi.textContent="KAZANDIN!";
+sonEkran.appendChild(sonEkranYazi);
 
 
 function Silah() {
