@@ -47,6 +47,8 @@ h1{
 body{
     transition: background-color 2s;
     /* display:flex; */
+    box-sizing: border-box;
+}
 
 }
 
