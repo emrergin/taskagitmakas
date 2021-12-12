@@ -30,9 +30,9 @@ h1{
     animation: scale 0.5s;
 }
 
-/* .dugme:hover .resim, .dugme.hover .resim {
+#Tabanca:hover .resim, #Tabanca.hover .resim {
     transform: none;
-} */
+}
 
 
 .resim{
