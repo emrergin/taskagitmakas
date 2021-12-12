@@ -3,6 +3,7 @@ const faniler = document.querySelector('#fani');
 const arka = document.querySelector('body');
 const dugmeListesi = document.querySelector('#dugmeler');
 let kayipsayisi=0;
+let kazancsayisi=0;
 let klik=0;
 const finalklik=3;
 
@@ -88,21 +89,28 @@ tabancaDugme.classList.add('dugme');
 const audiobam = document.querySelector("#bam");
 const audioklik = document.querySelector("#klik");
 
+const sonEkran = document.createElement('p');
+sonEkran.classList.add('win'); 
+sonEkran.textContent="KAZANDIN!";
+
 
 function Silah() {
     klik++;
     audioklik.currentTime = 0;
+    audioklik.play();
+
     tabancaResim.classList.add('titre');
     tabancaResim.addEventListener( "animationend",  function() {
         tabancaResim.classList.remove("titre");
     });
     
-    audioklik.play();
+
     if (klik>finalklik){
         audioklik.pause();
         audiobam.play();
         faniler.style.cssText = "display:none";
-        arka.style.cssText="background-color: #8b0000";
+        arka.style.cssText="background-color: #8b0000;";
+        arka.appendChild(sonEkran);
    }
 }
 
