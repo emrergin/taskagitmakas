@@ -1,3 +1,8 @@
+*{
+    /* font-family: 'Roboto', sans-serif; */
+    box-sizing: border-box;
+}
+
 h1{
     text-align: center;
     font-size: 48px;
@@ -47,10 +52,10 @@ h1{
 body{
     transition: background-color 2s;
     /* display:flex; */
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 
-}
+
 
 .win{
     color: white; 

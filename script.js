@@ -109,7 +109,7 @@ function Silah() {
         audioklik.pause();
         audiobam.play();
         faniler.style.cssText = "display:none";
-        arka.style.cssText="background-color: #8b0000; height:100vh";
+        arka.style.cssText="background-color: #8b0000; height:100vh; overflow: hidden";
         arka.appendChild(sonEkran);
    }
 }
