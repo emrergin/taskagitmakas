@@ -6,6 +6,7 @@ let kayipsayisi=0;
 let kazancsayisi=0;
 let klik=0;
 const finalklik=3;
+const kayLimit=2;
 
 
 function computerPlay(){
@@ -40,7 +41,7 @@ function singleRound(hamle1,hamle2)
         kayipsayisi++;
     }
     mesaj.insertBefore(mevcut, mesaj.firstChild);
-    if (kayipsayisi>2){
+    if (kayipsayisi>kayLimit){
         dugmeListesi.appendChild(tabancaDugme);
         const btn4 = document.querySelector('#Tabanca');
         btn4.addEventListener('click', Silah);
@@ -57,7 +58,6 @@ function game(num){
       }
 }
 
-// game(5);
 
 const btn1 = document.querySelector('#Tas');
 btn1.addEventListener('click', function(){
@@ -90,10 +90,8 @@ const audiobam = document.querySelector("#bam");
 const audioklik = document.querySelector("#klik");
 
 const sonEkran = document.createElement('p');
-const sonEkranYazi = document.createElement('span');
 sonEkran.classList.add('win'); 
-sonEkranYazi.textContent="KAZANDIN!";
-sonEkran.appendChild(sonEkranYazi);
+sonEkran.textContent="KAZANDIN!"
 
 
 function Silah() {
