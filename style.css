@@ -1,20 +1,25 @@
 *{
-    /* font-family: 'Roboto', sans-serif; */
     box-sizing: border-box;
+}
+
+.ustveorta{
+    display:flex;
+    flex-direction: column;
+    height: 70vh;
+    align-items: center;
 }
 
 h1{
     text-align: center;
     font-size: 48px;
-    /* display:flex;
-    justify-content: center;
-    gap: 20vw;
-    margin: 5px 11vw; */
 }
 
-/* .bas{
-    flex-basis: 0;
-} */
+.skor{
+    display:flex;
+    gap: 10vw;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
 
 #dugmeler{
     display: flex;
@@ -28,6 +33,7 @@ h1{
     display: flex;
     align-items: center;
     background-color: inherit;
+    justify-content: center;
 }
 
 .dugme:hover .ilkresim{
@@ -35,28 +41,22 @@ h1{
     animation: scale 0.5s;
 }
 
-
-
 .resim{
-    /* max-width: 30vw;
-    flex: 1; */
     max-width:100%;
+    max-height: 50vh;;
+    /* flex: 1 1 auto; */
 }
 
 #message{
+    margin-top:15px;
     text-align: center;
     font-size: 16px;
-    /* white-space: pre-line; */
 }
 
 body{
     transition: background-color 2s;
-    /* display:flex; */
-    /* box-sizing: border-box; */
     margin:0px;
 }
-
-
 
 .win{
     color: white; 
@@ -115,3 +115,4 @@ body{
   a{
     color: #66FF99;
   }
+
