@@ -53,6 +53,7 @@ body{
     transition: background-color 2s;
     /* display:flex; */
     /* box-sizing: border-box; */
+    margin:0px;
 }
 
 
