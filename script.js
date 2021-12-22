@@ -100,12 +100,6 @@ btn3.addEventListener('click', function(){
     singleRound("Makas",computerPlay());
 });
 
-
-
-
-
-
-
 function Silah() {
     klik++;
     audioklik.currentTime = 0;
